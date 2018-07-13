@@ -30,9 +30,11 @@
     "url": "git+https://github.com/kawanet/msg-int64.git"
   },
   "scripts": {
-    "mocha": "./node_modules/.bin/mocha test",
+    "mocha": "./node_modules/.bin/mocha test/*.js",
+    "mocha-watch": "./node_modules/.bin/mocha --watch test/*.js",
     "test": "npm run mocha",
-    "tsc": "./node_modules/.bin/tsc"
+    "tsc": "./node_modules/.bin/tsc",
+    "tsc-watch": "./node_modules/.bin/tsc --watch"
   },
   "typings": "lib/msg-int64.ts"
 }
