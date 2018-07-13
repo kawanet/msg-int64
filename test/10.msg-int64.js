@@ -14,6 +14,8 @@ it("MsgInt64", function () {
     assert.equal(atos(new __1.MsgInt64(4294967296).toMsgpack()), "d3-00-00-00-01-00-00-00-00");
     assert.equal(atos(new __1.MsgInt64(Math.pow(2, 48)).toMsgpack()), "d3-00-01-00-00-00-00-00-00");
     assert.equal(atos(new __1.MsgInt64(Math.pow(2, 62)).toMsgpack()), "d3-40-00-00-00-00-00-00-00");
+    assert.equal(+new __1.MsgInt64([0, 0, 0, 0, 0, 0, 0, 1]), 1);
+    assert.equal(+new __1.MsgInt64([0, 0, 0, 1, 0, 0, 0, 0]), 4294967296);
 });
 it("MsgUInt64", function () {
     var msg = new __1.MsgUInt64(1);
@@ -26,6 +28,8 @@ it("MsgUInt64", function () {
     assert.equal(atos(new __1.MsgUInt64(4294967296).toMsgpack()), "cf-00-00-00-01-00-00-00-00");
     assert.equal(atos(new __1.MsgUInt64(Math.pow(2, 48)).toMsgpack()), "cf-00-01-00-00-00-00-00-00");
     assert.equal(atos(new __1.MsgUInt64(Math.pow(2, 63)).toMsgpack()), "cf-80-00-00-00-00-00-00-00");
+    assert.equal(+new __1.MsgUInt64([0, 0, 0, 0, 0, 0, 0, 1]), 1);
+    assert.equal(+new __1.MsgUInt64([0, 0, 0, 1, 0, 0, 0, 0]), 4294967296);
 });
 function atos(array) {
     return [].map.call(array, function (v) {
