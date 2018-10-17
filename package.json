@@ -11,10 +11,7 @@
     "msg-interface": "github:kawanet/msg-interface"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.0",
-    "mocha": "^5.2.0",
-    "typescript": "^3.1.3"
+    "mocha": "^5.2.0"
   },
   "homepage": "https://github.com/kawanet/msg-int64#readme",
   "keywords": [
@@ -24,16 +21,15 @@
     "typescript"
   ],
   "license": "MIT",
-  "main": "lib/msg-int64.js",
+  "main": "./msg-int64.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kawanet/msg-int64.git"
   },
   "scripts": {
+    "fixpack": "fixpack",
     "mocha": "./node_modules/.bin/mocha test/*.js",
-    "test": "npm run mocha",
-    "tsc": "./node_modules/.bin/tsc",
-    "tsc-watch": "./node_modules/.bin/tsc --watch"
+    "test": "npm run mocha"
   },
-  "typings": "lib/msg-int64.ts"
+  "typings": "./msg-int64.d.ts"
 }
