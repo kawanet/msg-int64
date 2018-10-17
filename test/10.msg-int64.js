@@ -7,7 +7,14 @@ var M = require("../");
 var MsgInt64 = M.MsgInt64;
 var MsgUInt64 = M.MsgUInt64;
 
-it("MsgInt64", function() {
+var TITLE = __filename.split("/").pop();
+
+describe(TITLE, function() {
+  it("MsgInt64", testMsgInt64);
+  it("MsgUInt64", MsgUInt64);
+});
+
+function testMsgInt64() {
   var msg = new MsgInt64(-1);
   assert(MsgInterface.isMsg(msg));
   assert.strictEqual(+msg, -1);
@@ -28,9 +35,9 @@ it("MsgInt64", function() {
 
   assert.strictEqual(typeof MsgInt64.isInt64BE, "function");
   assert.strictEqual(MsgInt64.isInt64BE(msg), true);
-});
+}
 
-it("MsgUInt64", function() {
+function testMsgUInt64() {
   var msg = new MsgUInt64(1);
   assert(MsgInterface.isMsg(msg));
   assert.strictEqual(+msg, 1);
@@ -51,7 +58,7 @@ it("MsgUInt64", function() {
 
   assert.strictEqual(typeof MsgUInt64.isUint64BE, "function");
   assert.strictEqual(MsgUInt64.isUint64BE(msg), true);
-});
+}
 
 function atos(array) {
   return [].map.call(array, function(v) {
