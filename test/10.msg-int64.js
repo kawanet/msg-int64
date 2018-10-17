@@ -25,6 +25,9 @@ it("MsgInt64", function() {
 
   assert.strictEqual(+new MsgInt64([0, 0, 0, 0, 0, 0, 0, 1]), 1);
   assert.strictEqual(+new MsgInt64([0, 0, 0, 1, 0, 0, 0, 0]), 4294967296);
+
+  assert.strictEqual(typeof MsgInt64.isInt64BE, "function");
+  assert.strictEqual(MsgInt64.isInt64BE(msg), true);
 });
 
 it("MsgUInt64", function() {
@@ -45,6 +48,9 @@ it("MsgUInt64", function() {
 
   assert.strictEqual(+new MsgUInt64([0, 0, 0, 0, 0, 0, 0, 1]), 1);
   assert.strictEqual(+new MsgUInt64([0, 0, 0, 1, 0, 0, 0, 0]), 4294967296);
+
+  assert.strictEqual(typeof MsgUInt64.isUint64BE, "function");
+  assert.strictEqual(MsgUInt64.isUint64BE(msg), true);
 });
 
 function atos(array) {
