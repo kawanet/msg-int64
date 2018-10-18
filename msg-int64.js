@@ -31,6 +31,7 @@ function inherits(child, _super, token) {
   P.msgpackLength = 9;
 
   P.writeMsgpackTo = function(buffer, offset) {
+    offset |= 0;
     buffer[offset] = token;
     this.toBuffer().copy(buffer, offset + 1);
     return 9;
